@@ -1,50 +1,70 @@
 import 'package:flutter/material.dart';
-
+import 'package:temple/json.dart';
+import 'dart:async';
 import 'getjson.dart';
-
-
-class MyApp2 extends StatelessWidget {
-  // This widget is the root of your application.
+import 'dart:convert';
+import 'package:http/http.dart' as Http;
+class Searchapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Http',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Http'),
+      title: 'Retrieve Text Input',
+      home: MyCustomForm(),
     );
   }
 }
- 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
- 
+
+// Define a custom Form widget.
+class MyCustomForm extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyCustomFormState createState() => _MyCustomFormState();
 }
- 
-class _MyHomePageState extends State<MyHomePage> {
-   @override
-  void initState() {
-    APIService.templecs();
-    super.initState();
+
+// Define a corresponding State class.
+// This class holds the data related to the Form.
+class _MyCustomFormState extends State<MyCustomForm> {
+  // Create a text controller and use it to retrieve the current value
+  // of the TextField.
+  final myController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    myController.dispose();
+    super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        backgroundColor: Colors.orangeAccent,
+        title: Text('แหล่งรวมวัดในจังหวัดศรีสะเกษ'),
       ),
-      body: Center(
- 
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: TextField(
+          controller: myController,
         ),
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        // When the user presses the button, show an alert dialog containing
+        // the text that the user has entered into the text field.
+        onPressed: () {
+          return showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                // Retrieve the text the that user has entered by using the
+                // TextEditingController.
+                content: Text(myController.text),
+              );
+            },
+          );
+        },
+        // tooltip: 'Show me the value!',
+        child: Icon(Icons.search),
+      ),
     );
   }
 }

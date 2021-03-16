@@ -18,7 +18,7 @@ class _LauncherState extends State<Launcher> {
   int _selectedIndex = 0;
   List<Widget> _pageWidget = <Widget>[
 
-    MyApp2(),
+    Searchapp(),
     WebViewExample1(),
     long(),
     WebViewExample2(),

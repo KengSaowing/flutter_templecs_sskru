@@ -10,3 +10,14 @@ class APIService {
     print("Response status: ${jsonData}");
     } 
   }
+  class templessk {
+  int id;
+  String name;
+  String Monk;
+  String Details;
+  String img_url;
+  String Detailsa;
+  String Detailsb;
+
+  templessk(this.id, this.name, this.img_url ,this.Monk,this.Details,this.Detailsa,this.Detailsb);
+  }

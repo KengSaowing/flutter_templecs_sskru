@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
     print(jsonData);
     for (var u in jsonData) {
       print(u);
-      templessk temple = templessk(u['id'], u['name'], u['image'], u['Monk'], u['Details'],u['Detailsa'],u['Detailsb'],);
+      templessk temple = templessk(u['id'], u['name'], u['image'], u['Monk'], u['Details'],u['Detailsa'],u['Detailsb'],u['Caregory']);
 
       dataList.add(temple);
     }
@@ -83,6 +83,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           title: Text(
                               '${dataList[index].name} ',
                           ),
+                          trailing: Text(
+                            '${dataList[index].Category}',
+                          ),
                         ),
                       ),
                     );
@@ -109,8 +112,9 @@ class templessk {
   String img_url;
   String Detailsa;
   String Detailsb;
+  String Category;
 
-  templessk(this.id, this.name, this.img_url ,this.Monk,this.Details,this.Detailsa,this.Detailsb);
+  templessk(this.id, this.name, this.img_url ,this.Monk,this.Details,this.Detailsa,this.Detailsb,this.Category,);
 
 }
 

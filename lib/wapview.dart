@@ -32,6 +32,21 @@ class _WebViewExampleState extends State<WebViewExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+    
+  actions: <Widget>[
+    
+    Padding(
+      padding: EdgeInsets.only(right: 20.0),
+      child: GestureDetector(
+        onTap: () {},
+        child: Icon(
+            Icons.more_vert
+        ),
+      )
+    ),
+  ],
+  ),
       body: Container(
         child: FutureBuilder(
           future: _getCurrentLocation(),
@@ -39,6 +54,7 @@ class _WebViewExampleState extends State<WebViewExample> {
             if (snapshot.hasData) {
               return Container(
                 child: WebView(
+                  gestureNavigationEnabled: true,
                     javascriptMode: JavascriptMode.unrestricted,
                     debuggingEnabled: true,
                     initialUrl: "http://templecs.herokuapp.com/?lat=" +
@@ -47,6 +63,7 @@ class _WebViewExampleState extends State<WebViewExample> {
                         userLocation.longitude.toString(),
                     onWebViewCreated: (WebViewController webViewController) {
                       _controller.complete(webViewController);
+                      
                     }),
               );
             } else {
@@ -71,4 +88,6 @@ class _WebViewExampleState extends State<WebViewExample> {
     }
     return currentLocation;
   }
+  
+  
 }

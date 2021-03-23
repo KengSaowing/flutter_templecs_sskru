@@ -1,69 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:temple/json.dart';
-import 'dart:async';
-import 'getjson.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as Http;
-class Searchapp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Retrieve Text Input',
-      home: MyCustomForm(),
-    );
-  }
-}
 
-// Define a custom Form widget.
-class MyCustomForm extends StatefulWidget {
+class searchapp extends StatelessWidget {
   @override
-  _MyCustomFormState createState() => _MyCustomFormState();
-}
-
-// Define a corresponding State class.
-// This class holds the data related to the Form.
-class _MyCustomFormState extends State<MyCustomForm> {
-  // Create a text controller and use it to retrieve the current value
-  // of the TextField.
-  final myController = TextEditingController();
-
-  @override
-  void dispose() {
-    // Clean up the controller when the widget is disposed.
-    myController.dispose();
-    super.dispose();
-  }
-
-  @override
+  
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.orangeAccent,
-        title: Text('แหล่งรวมวัดในจังหวัดศรีสะเกษ'),
+        title: Text('วัดในจังหวัดศรีสะเกษ'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: TextField(
-          controller: myController,
+      body: Container(
+        margin: EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+        decoration: BoxDecoration(
+          color: Colors.black38.withAlpha(10),
+          borderRadius: BorderRadius.all(
+            Radius.circular(20),
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        // When the user presses the button, show an alert dialog containing
-        // the text that the user has entered into the text field.
-        onPressed: () {
-          return showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                // Retrieve the text the that user has entered by using the
-                // TextEditingController.
-                content: Text(myController.text),
-              );
-            },
-          );
-        },
-        // tooltip: 'Show me the value!',
-        child: Icon(Icons.search),
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: "Search Flutter Topic",
+                  hintStyle: TextStyle(
+                    color: Colors.black.withAlpha(120),
+                  ),
+                  border: InputBorder.none,
+                ),
+                onChanged: (String keyword) {},
+              ),
+            ),
+            Icon(
+              Icons.search,
+              color: Colors.black.withAlpha(120),
+            )
+          ],
+        ),
       ),
     );
   }

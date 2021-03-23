@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as Http;
  
+
+ 
 class APIService {
   static templecs() async {
     var url = "https://templecs.herokuapp.com/api/temple";
@@ -10,7 +12,7 @@ class APIService {
     print("Response status: ${jsonData}");
     } 
   }
-  class templessk {
+  class templecs {
   int id;
   String name;
   String Monk;
@@ -19,5 +21,5 @@ class APIService {
   String Detailsa;
   String Detailsb;
 
-  templessk(this.id, this.name, this.img_url ,this.Monk,this.Details,this.Detailsa,this.Detailsb);
+  templecs(this.id, this.name, this.img_url ,this.Monk,this.Details,this.Detailsa,this.Detailsb);
   }

@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:temple/riviwe.dart';
 import 'package:temple/sarup.dart';
 import 'package:temple/search.dart';
+import 'package:temple/wapview.dart';
 import 'json.dart';
 
 class Launcher extends StatefulWidget {
@@ -18,7 +19,7 @@ class _LauncherState extends State<Launcher> {
   int _selectedIndex = 0;
   List<Widget> _pageWidget = <Widget>[
 
-    Searchapp(),
+    WebViewExample(),
     WebViewExample1(),
     long(),
     WebViewExample2(),

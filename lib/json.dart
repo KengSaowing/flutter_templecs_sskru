@@ -7,7 +7,7 @@ import 'dart:convert';
 
 import 'package:temple/detailviews.dart';
 
-class long extends StatelessWidget {
+class Listview extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
     print(jsonData);
     for (var u in jsonData) {
       print(u);
-      templessk temple = templessk(u['id'], u['name'], u['image'], u['Monk'], u['Details'],u['Detailsa'],u['Detailsb'],u['Caregory']);
+      templessk temple = templessk(u['id'], u['name'], u['image'], u['Monk'], u['Details'],u['Detailsa'],u['Detailsb'],u['latitude'],u['Longitude'],);
 
       dataList.add(temple);
     }
@@ -54,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor:Colors.orange,
         title: Text(widget.title),
       ),
       body: Container(
@@ -63,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
               if (snapshot.hasData) {
                 return ListView.builder(
                   padding: const EdgeInsets.all(10.0),
-                  itemCount: dataList.length,
+                  
                   itemBuilder: (context, index) {
                     return Card(
                       child: new InkWell(
@@ -79,12 +80,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           );
                         },
                         child: ListTile(
-                          leading:Image.network('https://res.cloudinary.com/https-templeinsisaket-herokuapp-com/'+dataList[index].img_url),
+                          leading:Image.network('https://res.cloudinary.com/https-templeinsisaket-herokuapp-com/'+dataList[index].img_url,  
+                          width: 50.0, height: 50.0,),
                           title: Text(
                               '${dataList[index].name} ',
-                          ),
-                          trailing: Text(
-                            '${dataList[index].Category}',
                           ),
                         ),
                       ),
@@ -112,9 +111,10 @@ class templessk {
   String img_url;
   String Detailsa;
   String Detailsb;
-  String Category;
+  String latitude;
+  String Longitude;
 
-  templessk(this.id, this.name, this.img_url ,this.Monk,this.Details,this.Detailsa,this.Detailsb,this.Category,);
+  templessk(this.id, this.name, this.img_url ,this.Monk,this.Details,this.Detailsa,this.Detailsb,this.latitude,this.Longitude);
 
 }
 

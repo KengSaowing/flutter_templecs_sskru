@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:temple/riviwe.dart';
 import 'package:temple/sarup.dart';
-import 'package:temple/search.dart';
-import 'package:temple/wapview.dart';
+import 'package:temple/web%20broser.dart';
+import 'admintemple.dart';
 import 'json.dart';
 
 class Launcher extends StatefulWidget {
@@ -19,28 +18,23 @@ class _LauncherState extends State<Launcher> {
   int _selectedIndex = 0;
   List<Widget> _pageWidget = <Widget>[
 
-    WebViewExample(),
-    WebViewExample1(),
-    long(),
-    WebViewExample2(),
+    Webbrowser(),
+    Listview(),
+    Webbrowser2(),
   ];
   List<BottomNavigationBarItem> _menuBar
   = <BottomNavigationBarItem>[
     BottomNavigationBarItem(
-      icon: Icon(FontAwesomeIcons.search),
-      title: Text('หน้าค้นหา'),
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(FontAwesomeIcons.image),
-      title: Text('รีวิววัด'),
+      icon: Icon(FontAwesomeIcons.home),
+      title: Text('หน้าแรก'),
     ),
     BottomNavigationBarItem(
       icon: Icon(FontAwesomeIcons.list),
       title: Text('รายชื่อวัดทั้งหมด'),
     ),
     BottomNavigationBarItem(
-      icon: Icon(FontAwesomeIcons.database),
-      title: Text('สรุปข้อมูล'),
+      icon: Icon(FontAwesomeIcons.userCircle),
+      title: Text('Admin'),
     ),
   ];
 

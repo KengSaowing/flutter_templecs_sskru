@@ -23,11 +23,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  firebase_core: ^0.4.0+9
-  firebase_analytics: ^5.0.2
-  firebase_auth: ^0.14.0+5
-  flutter_facebook_login:
-  google_sign_in: ^4.5.1
   http: ^0.12.2
   json_model: ^0.0.2
   json_serializable: ^2.0.0
@@ -40,23 +35,15 @@ dependencies:
   google_maps: 
   url_launcher:
   flutter_webview_plugin: ^0.3.11
-  maps_launcher: ^1.2.2+2
-  map_launcher: ^1.1.3+1
-  flutter_user_agent: ^1.2.2
+  maps_launcher: ^1.2.1
   google_maps_webservice: ^0.0.19
   intent: ^1.4.0
   flutter_js: 
-  search: ^0.3.0
-  flutter_search_bar: ^2.1.0
-  poscli: ^0.1.2
-  search_page: ^1.4.0+1
   menu: ^0.1.4
   android_intent: 
-  googleapis: 
-  googleapis_auth: 
   scheme_package: ^0.0.2
-  google_maps_flutter:
-  flutter_inappwebview: 
+  flutter_web_browser:
+  carousel_slider: 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3

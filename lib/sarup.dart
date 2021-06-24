@@ -15,8 +15,17 @@ class WebViewExample2State extends State<WebViewExample2> {
 
   @override
   Widget build(BuildContext context) {
-    return WebView(
-      initialUrl: 'http://templecs.herokuapp.com/wapviwe',
+    return
+    Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+          title: new Text('แหล่งรวมวัดในจังหวัดศรีสะเกษ'),
+           automaticallyImplyLeading: false,
+      ),
+     body: WebView(
+      initialUrl: 'https://templecs.herokuapp.com/admin/login/',
+      
+    )
     );
   }
 }
